@@ -36,20 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (color_field && (color_field.value.length !== 7 || color_field.value[0] !== "#")) {
-      send = false;
-      color_field.style.border = "1px solid red";
-    } else if (color_field) {
-      color_field.style.border = "1px solid green";
-    }
-
-    if (message_field.value.length < 5 || message_field.value.length > 255) {
-      send = false;
-      message_field.style.border = "1px solid red";
-    } else {
-      message_field.value = message_field.value.replace(/'/g, "\\'");
-      message_field.style.border = "1px solid green";
-    }
 
     if (!send) {
       console.log("Formulario con errores. No se ha enviado.");
